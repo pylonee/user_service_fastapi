@@ -1,4 +1,5 @@
 User Balance Service
+
 REST-сервис для управления пользователями и денежными переводами, построенный на FastAPI.
 
 Возможности:
@@ -13,6 +14,7 @@ REST-сервис для управления пользователями и д
 Клонируйте репозиторий:
 
     git clone https://github.com/pylonee/user_service_fastapi
+
     cd user-service
 
 Создайте виртуальное окружение:
@@ -21,10 +23,12 @@ REST-сервис для управления пользователями и д
 
 Активируйте виртуальное окружение:
 
-    Windows:
+Windows:
+
     .venv\Scripts\activate
 
-    macOS/Linux:
+macOS/Linux:
+
     source .venv/bin/activate
 
 Установите зависимости:
@@ -38,18 +42,21 @@ REST-сервис для управления пользователями и д
 Сервер будет доступен по адресу: http://localhost:8000
 
 Документация API:
+
 После запуска сервера доступна автоматическая документация:
 
 Swagger UI: http://localhost:8000/docs
+
 ReDoc: http://localhost:8000/redoc
 
 API Endpoints:
 1. Создание пользователя:
 
+POST /users
 
-    POST /users
 
     json
+
     {
     "name": "user name",
     "email": "user@example.com",
@@ -58,15 +65,14 @@ API Endpoints:
 
 2. Получение списка пользователей
 
-
-    GET /users
+GET /users
 
 3. Перевод
 
-
-    POST /transfer
+POST /transfer
 
     json
+
     {
      "from_user_id": "uuid-отправителя",
      "to_user_id": "uuid-получателя", 
@@ -94,20 +100,26 @@ API Endpoints:
 
 1. Создание пользователя:
 
+
+
     curl -X POST "http://localhost:8000/users" \
     -H "Content-Type: application/json" \
     -d '{"name": "John Doe", "email": "john@example.com", "balance": 1000}'
 
 2. Получение пользователей:
 
+
+
     curl "http://localhost:8000/users"
 
 3. Перевод средств:
 
 
-      curl -X POST "http://localhost:8000/transfer" \
-      -H "Content-Type: application/json" \
-      -d '{"from_user_id": "c6e5a7d0-1234-5678-9abc-def012345678", 
+
+
+    curl -X POST "http://localhost:8000/transfer" \
+    -H "Content-Type: application/json" \
+    -d '{"from_user_id": "c6e5a7d0-1234-5678-9abc-def012345678", 
         "to_user_id": "f4e8b2c1-9876-5432-10ab-cdef01234567", 
         "amount": 200}'
 
@@ -126,6 +138,7 @@ API Endpoints:
 
 
 Лицензия:
+
 Это тестовый проект. Исходный код предоставляется только для ознакомления.
 Любое использование, копирование или распространение запрещено без разрешения автора.
 
