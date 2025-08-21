@@ -55,7 +55,7 @@ API Endpoints:
 POST /users
 
 
-    json
+json
 
     {
     "name": "user name",
@@ -71,7 +71,7 @@ GET /users
 
 POST /transfer
 
-    json
+json
 
     {
      "from_user_id": "uuid-отправителя",
@@ -100,28 +100,21 @@ POST /transfer
 
 1. Создание пользователя:
 
-
-
-    curl -X POST "http://localhost:8000/users" \
-    -H "Content-Type: application/json" \
-    -d '{"name": "John Doe", "email": "john@example.com", "balance": 1000}'
+        curl -X POST "http://localhost:8000/users" \
+        -H "Content-Type: application/json" \
+        -d '{"name": "John Doe", "email": "john@example.com", "balance": 1000}'
 
 2. Получение пользователей:
 
-
-
-    curl "http://localhost:8000/users"
+       curl "http://localhost:8000/users"
 
 3. Перевод средств:
 
-
-
-
-    curl -X POST "http://localhost:8000/transfer" \
-    -H "Content-Type: application/json" \
-    -d '{"from_user_id": "c6e5a7d0-1234-5678-9abc-def012345678", 
-        "to_user_id": "f4e8b2c1-9876-5432-10ab-cdef01234567", 
-        "amount": 200}'
+       curl -X POST "http://localhost:8000/transfer" \
+       -H "Content-Type: application/json" \
+       -d '{"from_user_id": "c6e5a7d0-1234-5678-9abc-def012345678", 
+           "to_user_id": "f4e8b2c1-9876-5432-10ab-cdef01234567", 
+           "amount": 200}'
 
 Технологии:
 - FastAPI - веб-фреймворк
